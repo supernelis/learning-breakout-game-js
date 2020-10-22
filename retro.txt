@@ -1,0 +1,21 @@
+2020-10-22:
+
+Like:
+- mob.sh: easy, no-nonsense +2
+- learning together: going together through the tutorial
+- nice to be back at it after a couple of weeks
+- fast decide what to do (default to action?)
+
+Learn:
+- Canvas +2
+- Basic animation
+- mob.sh applies to much more situations, 
+    a lot more flexible
+        - use your own screenshare, 
+        - your own editor settings, 
+        - private repo
+- 5 minutes is short for a setup with share screen switch
+- Switching: has to setup the context again (annoying)
+
+
+
