@@ -17,5 +17,22 @@ Learn:
 - 5 minutes is short for a setup with share screen switch
 - Switching: has to setup the context again (annoying)
 
+2020-11-06:
 
+Like:
+- mob.sh: fluent switching +1
+- 7 minute interval worked well in this setup +1
+- Group dynamic is fluid +2
+
+
+Learn:
+- Drawing on the canvas +2
+- Step-by-step build up of the game +2
+- Having the same set up on everyone's system really helps +2
+
+# Options
+
+1. Test set up 
+1. Cover it with tests
+2. Start from scratch
 
