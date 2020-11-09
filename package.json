@@ -1,0 +1,19 @@
+{
+  "name": "learning-breakout-game",
+  "version": "0.0.1",
+  "description": "A project to learn making a game inside the browser, learning javascript and running tests",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supernelis/learning-breakout-game-js.git"
+  },
+  "author": "Matteo, Saket, Nelis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supernelis/learning-breakout-game-js/issues"
+  },
+  "homepage": "https://github.com/supernelis/learning-breakout-game-js#readme"
+}
