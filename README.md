@@ -29,3 +29,27 @@ add command to package.json to run jest
   }
 }
 ```
+
+## Mocking the DOM for Jest
+
+```
+const { JSDOM } = require('jsdom');
+const dom = new JSDOM()
+global.document = dom.window.document
+global.window = dom.window
+```
+
+Inside test:
+
+```
+  document.body.innerHTML =
+    '<div>' +
+    '<canvas height="320" id="myCanvas" width="480"></canvas>' +
+    '</div>';
+```
+
+Install canvas package:
+
+```
+npm install --save-dev canvas
+```

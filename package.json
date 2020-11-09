@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/supernelis/learning-breakout-game-js#readme",
   "devDependencies": {
+    "canvas": "^2.6.1",
     "jest": "^26.6.3"
   }
 }
