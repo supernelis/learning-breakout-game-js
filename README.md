@@ -33,6 +33,10 @@ add command to package.json to run jest
 ## Mocking the DOM for Jest
 
 ```
+brew install pixman pkg-config cairo pango libpng jpeg giflib
+```
+
+```
 const { JSDOM } = require('jsdom');
 const dom = new JSDOM()
 global.document = dom.window.document
