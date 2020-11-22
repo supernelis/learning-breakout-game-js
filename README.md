@@ -57,3 +57,11 @@ Install canvas package:
 ```
 npm install --save-dev canvas
 ```
+
+Install jest-canvas-snapshot-serializer
+
+```
+npm install --save-dev jest-canvas-snapshot-serializer
+```
+
+if it fails, it's fine :)

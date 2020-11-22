@@ -14,7 +14,8 @@ test('score is 0', () => {
     '</div>';
   
   require('./game');
-  console.log(document.body)
+  const canvas = document.getElementById("myCanvas")
+  expect(canvas).toMatchSnapshot();
 });
 
 test("my awesome test", () => {
