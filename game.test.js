@@ -3,11 +3,27 @@ const dom = new JSDOM()
 global.document = dom.window.document
 global.window = dom.window
 
-test('adds 1 + 2 to equal 3', () => {
+const canvasSerializer = require("jest-canvas-snapshot-serializer");
+
+expect.addSnapshotSerializer(canvasSerializer);
+
+test('score is 0', () => {
   document.body.innerHTML =
     '<div>' +
     '<canvas height="320" id="myCanvas" width="480"></canvas>' +
     '</div>';
-  const sum = require('./game');
-  expect(sum(1, 2)).toBe(3);
+  
+  require('./game');
+  console.log(document.body)
+});
+
+test("my awesome test", () => {
+  const canvas = document.createElement("canvas");
+
+  // canvas must have a width and height attribute
+  // otherwise there is no image to serialize
+  canvas.setAttribute("width", "200");
+  canvas.setAttribute("height", "200");
+
+  expect(canvas).toMatchSnapshot();
 });
