@@ -36,3 +36,14 @@ Learn:
 1. Cover it with tests
 2. Start from scratch
 
+2020-11-09
+
+Like:
+- jest without the dom is fine
+- chatting
+
+Learn:
+- Testing jest dom requires a lot of fancy libraries +2
+- Google is key to find solutions
+- npm experience is painful (random failure, rabbit hole) +1
+- jest coverage command
