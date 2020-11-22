@@ -30,6 +30,40 @@ var brickOffsetLeft = 30;
 // lives
 var lives = 3;
 
+function reset() {
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext("2d");
+
+    score = 0;
+
+    ballRadius = 10;
+
+    paddleHeight = 10;
+    paddleWidth = 75;
+    paddleX = (canvas.width - paddleWidth) / 2;
+
+    x = canvas.width / 2;
+    y = canvas.height - 30;
+    dx = 2;
+    dy = -2;
+
+    rightPressed = false;
+    leftPressed = false;
+
+    /** brick wall **/
+
+    brickRowCount = 3;
+    brickColumnCount = 5;
+    brickWidth = 75;
+    brickHeight = 20;
+    brickPadding = 10;
+    brickOffsetTop = 30;
+    brickOffsetLeft = 30;
+
+    // lives
+    lives = 3;
+}
+
 function drawLives() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
@@ -188,7 +222,5 @@ function draw() {
 }
 
 var interval = setInterval(draw, 10);
-function sum(a, b) {
-    return a + b;
-  }
-  module.exports = sum;
+
+module.exports = {draw, reset};

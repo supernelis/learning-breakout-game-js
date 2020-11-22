@@ -47,3 +47,24 @@ Learn:
 - Google is key to find solutions
 - npm experience is painful (random failure, rabbit hole) +1
 - jest coverage command
+
+2020-11-22:
+
+Things to try next time:
+- Is the setInterval doing something?
+- What about the document handles? Mock the handlers or call the functions?
+- Try Gitduck
+- Try vscode refactorings
+
+Like:
+- It worked in the end (despite the tech trouble) +2
+- Trying something different then usual
+- Golden master for images +2
+
+Learned:
+- Javascript libraries often suck (especially around canvas)
+- snapshotting a canvas
+- while doing research, 10 minutes interval switching is fast. Still worked in the edn.
+- Zoom is always in the way when we switch
+- Less strict about changes to the code, but only adding reset and export. Compared to the trip service kata.
+
