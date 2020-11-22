@@ -13,7 +13,8 @@ test('score is 0', () => {
     '<canvas height="320" id="myCanvas" width="480"></canvas>' +
     '</div>';
   
-  require('./game');
+  const draw = require('./game');
+  draw();
   const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
 });

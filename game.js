@@ -188,7 +188,5 @@ function draw() {
 }
 
 var interval = setInterval(draw, 10);
-function sum(a, b) {
-    return a + b;
-  }
-  module.exports = sum;
+
+module.exports = draw;
