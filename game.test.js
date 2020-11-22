@@ -1,31 +1,39 @@
 const { JSDOM } = require('jsdom');
-const dom = new JSDOM()
-global.document = dom.window.document
-global.window = dom.window
+
 
 const canvasSerializer = require("jest-canvas-snapshot-serializer");
 
 expect.addSnapshotSerializer(canvasSerializer);
 
-test('score is 0', () => {
+xtest('start of game', () => {
+  const dom = new JSDOM()
+  global.document = dom.window.document
+  global.window = dom.window
   document.body.innerHTML =
     '<div>' +
     '<canvas height="320" id="myCanvas" width="480"></canvas>' +
     '</div>';
-  
+
+
   const draw = require('./game');
   draw();
+
   const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
 });
 
-test("my awesome test", () => {
-  const canvas = document.createElement("canvas");
+test('xxx', () => {
+  const dom = new JSDOM()
+  global.document = dom.window.document
+  global.window = dom.window
+  document.body.innerHTML =
+    '<div>' +
+    '<canvas height="320" id="myCanvas" width="480"></canvas>' +
+    '</div>';
 
-  // canvas must have a width and height attribute
-  // otherwise there is no image to serialize
-  canvas.setAttribute("width", "200");
-  canvas.setAttribute("height", "200");
+  const draw = require('./game')
+  draw();
 
+  const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
 });
