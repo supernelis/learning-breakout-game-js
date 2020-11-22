@@ -22,7 +22,7 @@ test('start of game', () => {
   expect(canvas).toMatchSnapshot();
 });
 
-test('xxx', () => {
+test('hit a brick and lose a life', () => {
   const dom = new JSDOM()
   global.document = dom.window.document
   global.window = dom.window
@@ -33,10 +33,9 @@ test('xxx', () => {
 
   const { draw, reset } = require('./game')
   reset();
-  draw();
-  draw();
-  draw();
-  draw();
+  for (i=1;i<200;i++){
+    draw();
+  }
 
   const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
