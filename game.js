@@ -172,10 +172,10 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
-    //drawScore();
+    drawScore();
     collisionDetection();
     drawBricks();
-    //drawLives();
+    drawLives();
 
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
