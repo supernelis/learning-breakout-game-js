@@ -68,6 +68,8 @@ if it fails, it's fine :)
 
 ## docker
 
-```
-$ docker-compose run node bash
-```
+### First time set up
+
+1. `docker-compose run node bash`
+1. (inside docker container): `npm install`
+1. (inside docker container): `npm install --save-dev jest-canvas-snapshot-serializer`
