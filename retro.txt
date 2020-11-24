@@ -52,9 +52,12 @@ Learn:
 
 Things to try next time:
 - Is the setInterval doing something?
-- What about the document handles? Mock the handlers or call the functions?
-- Try Gitduck
+- Use docker to run the tests
+
+- What about the click and key handlers? Mock the handlers or call the functions?
+
 - Try vscode refactorings
+- Try Gitduck
 
 Like:
 - It worked in the end (despite the tech trouble) +2
