@@ -65,3 +65,9 @@ npm install --save-dev jest-canvas-snapshot-serializer
 ```
 
 if it fails, it's fine :)
+
+## docker
+
+```
+$ docker-compose run node bash
+```
