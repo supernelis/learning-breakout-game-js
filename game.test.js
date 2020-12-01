@@ -22,7 +22,7 @@ test('start of game', () => {
   expect(canvas).toMatchSnapshot();
 });
 
-xtest('hit a brick and lose a life', () => {
+test('hit a brick and lose a life', () => {
   const dom = new JSDOM()
   global.document = dom.window.document
   global.window = dom.window
@@ -32,7 +32,7 @@ xtest('hit a brick and lose a life', () => {
     '</div>';
 
   const { draw, reset } = require('./game')
-  reset();
+  reset(()=>{});
   for (i=1;i<200;i++){
     draw();
   }
@@ -56,11 +56,14 @@ test('die', () => {
   const spyShow = (_message) => message = _message;
   reset(spyShow);
 
+  let canvas = document.getElementById("myCanvas")
+  expect(canvas).toMatchSnapshot();
+
   while(!message) {
     draw();
   }
 
-  const canvas = document.getElementById("myCanvas")
+  canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
   expect(message).toBe("GAME OVER")
 });
