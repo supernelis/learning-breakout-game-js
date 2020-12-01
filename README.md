@@ -56,7 +56,6 @@ Install canvas package:
 
 ```
 npm install --save-dev canvas
-
 ```
 
 Install jest-canvas-snapshot-serializer
@@ -66,3 +65,12 @@ npm install --save-dev jest-canvas-snapshot-serializer
 ```
 
 if it fails, it's fine :)
+
+## docker
+
+### First time set up
+
+1. `docker-compose run node bash`
+1. (inside docker container): `npm install`
+1. (inside docker container): `npm install --save-dev jest-canvas-snapshot-serializer`
+
