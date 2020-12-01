@@ -30,7 +30,7 @@ var brickOffsetLeft = 30;
 // lives
 var lives = 3;
 
-var show=alert;
+var show = alert;
 
 function reset(_show){
     show = _show;

@@ -22,7 +22,7 @@ test('start of game', () => {
   expect(canvas).toMatchSnapshot();
 });
 
-test('hit a brick and lose a life', () => {
+xtest('hit a brick and lose a life', () => {
   const dom = new JSDOM()
   global.document = dom.window.document
   global.window = dom.window
@@ -52,16 +52,17 @@ test('die', () => {
     '</div>';
 
   const { draw, reset } = require('./game')
-  const spyShow = jest.fn();
+  let message;
+  const spyShow = (_message) => message = _message;
   reset(spyShow);
 
-  for (i=1;i<1200;i++){
+  while(!message) {
     draw();
   }
 
   const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
-  expect(spyShow).toBeCalledWith("Something")
+  expect(message).toBe("GAME OVER")
 });
 
 xtest('alert', () => {
