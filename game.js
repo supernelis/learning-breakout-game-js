@@ -32,7 +32,7 @@ var lives = 3;
 
 var show = alert;
 
-var reload = document.location.reload;
+var reload = function(){document.location.reload()};
 
 var bricks = [];
 
