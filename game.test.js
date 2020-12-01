@@ -46,26 +46,22 @@ test('die', () => {
   global.document = dom.window.document
   global.window = dom.window
 
-  delete window;
-  window = { alert: jest.fn()};
-
   document.body.innerHTML =
     '<div>' +
     '<canvas height="320" id="myCanvas" width="480"></canvas>' +
     '</div>';
 
   const { draw, reset } = require('./game')
+  const spyShow = jest.fn();
+  reset(spyShow);
 
-  reset();
   for (i=1;i<1200;i++){
     draw();
   }
 
-  
-
   const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
-  
+  expect(spyShow).toBeCalledWith("Something")
 });
 
 xtest('alert', () => {

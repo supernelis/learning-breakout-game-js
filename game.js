@@ -30,9 +30,11 @@ var brickOffsetLeft = 30;
 // lives
 var lives = 3;
 
-alert("something")
+var show=alert;
 
-function reset() {
+function reset(_show){
+    show = _show;
+
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
 
@@ -160,7 +162,7 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if (score == brickRowCount * brickColumnCount) {
-                        alert("YOU WIN, CONGRATULATIONS!");
+                        show("YOU WIN, CONGRATULATIONS!");
                         document.location.reload();
                         clearInterval(interval); // Needed for Chrome to end game
                     }
@@ -192,7 +194,7 @@ function draw() {
         else {
             lives--;
             if (!lives) {
-                alert("GAME OVER");
+                show("GAME OVER");
                 document.location.reload();
                 clearInterval(interval); // Needed for Chrome to end game
             }
