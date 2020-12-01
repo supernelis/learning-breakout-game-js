@@ -40,3 +40,42 @@ test('hit a brick and lose a life', () => {
   const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
 });
+
+test('die', () => {
+  const dom = new JSDOM()
+  global.document = dom.window.document
+  global.window = dom.window
+
+  delete window;
+  window = { alert: jest.fn()};
+
+  document.body.innerHTML =
+    '<div>' +
+    '<canvas height="320" id="myCanvas" width="480"></canvas>' +
+    '</div>';
+
+  const { draw, reset } = require('./game')
+
+  reset();
+  for (i=1;i<1200;i++){
+    draw();
+  }
+
+  
+
+  const canvas = document.getElementById("myCanvas")
+  expect(canvas).toMatchSnapshot();
+  
+});
+
+xtest('alert', () => {
+  const dom = new JSDOM()
+  global.document = dom.window.document
+  global.window = dom.window
+  
+  jest.spyOn(window, 'alert').mockImplementation(() => {});
+
+  alert("something")
+
+  expect(window.alert).toBeCalledWith("something");
+});

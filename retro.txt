@@ -51,8 +51,8 @@ Learn:
 2020-11-22:
 
 Things to try next time:
-- Is the setInterval doing something?
-- Use docker to run the tests
+- Is the setInterval doing something? (done)
+- Use docker to run the tests (done)
 
 - What about the click and key handlers? Mock the handlers or call the functions?
 
@@ -70,3 +70,18 @@ Learned:
 - while doing research, 10 minutes interval switching is fast. Still worked in the edn.
 - Zoom is always in the way when we switch
 - Less strict about changes to the code, but only adding reset and export. Compared to the trip service kata.
+
+2020-11-24:
+
+Like:
+- Docker went smooth +2
+- Test with snapshot more predictable in docker
+- No strict timing on research / setup -- Would not have worked
+- We are used to working together has less chaos
+
+Learned:
+- A repeatable environment helps a lot
+- Mocking the dom hard, should be avoided if possible
+- Less experienced team would have split
+- Looking is also learning
+- Jest Mocking

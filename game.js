@@ -30,6 +30,8 @@ var brickOffsetLeft = 30;
 // lives
 var lives = 3;
 
+alert("something")
+
 function reset() {
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
