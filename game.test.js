@@ -51,6 +51,8 @@ test('die', () => {
     '<canvas height="320" id="myCanvas" width="480"></canvas>' +
     '</div>';
 
+  global.document.location.reload = ()=>{};
+
   const { draw, reset } = require('./game')
   let message;
   const spyShow = (_message) => message = _message;

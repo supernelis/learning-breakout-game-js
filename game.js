@@ -32,6 +32,8 @@ var lives = 3;
 
 var show = alert;
 
+var reload = document.location.reload;
+
 var bricks = [];
 
 for (var c = 0; c < brickColumnCount; c++) {
@@ -128,7 +130,7 @@ function collisionDetection() {
                     score++;
                     if (score == brickRowCount * brickColumnCount) {
                         show("YOU WIN, CONGRATULATIONS!");
-                        document.location.reload();
+                        reload();
                         clearInterval(interval); // Needed for Chrome to end game
                     }
                 }
@@ -160,7 +162,7 @@ function draw() {
             lives--;
             if (!lives) {
                 show("GAME OVER");
-                document.location.reload();
+                reload();
                 clearInterval(interval); // Needed for Chrome to end game
             }
             else {
@@ -237,6 +239,8 @@ function reset(_show){
             bricks[c][r] = { x: 0, y: 0, status: 1 };
         }
     }
+
+    reload = ()=>{};
 }
 
 function overrideLives(_lives) {
