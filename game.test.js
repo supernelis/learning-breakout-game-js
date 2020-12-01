@@ -56,27 +56,37 @@ test('die', () => {
   const spyShow = (_message) => message = _message;
   reset(spyShow);
 
-  let canvas = document.getElementById("myCanvas")
-  draw()
+  while(!message) {
+    draw();
+  }
+
+  const canvas = document.getElementById("myCanvas")
   expect(canvas).toMatchSnapshot();
+  expect(message).toBe("GAME OVER")
+});
+
+
+test('win', () => {
+  const dom = new JSDOM()
+  global.document = dom.window.document
+  global.window = dom.window
+
+  document.body.innerHTML =
+    '<div>' +
+    '<canvas height="320" id="myCanvas" width="480"></canvas>' +
+    '</div>';
+
+  const { draw, reset, overrideLives } = require('./game')
+  let message;
+  const spyShow = (_message) => message = _message;
+  reset(spyShow);
+  overrideLives(4);
 
   while(!message) {
     draw();
   }
 
-  canvas = document.getElementById("myCanvas")
-  //expect(canvas).toMatchSnapshot();
-  expect(message).toBe("GAME OVER")
-});
-
-xtest('alert', () => {
-  const dom = new JSDOM()
-  global.document = dom.window.document
-  global.window = dom.window
-  
-  jest.spyOn(window, 'alert').mockImplementation(() => {});
-
-  alert("something")
-
-  expect(window.alert).toBeCalledWith("something");
+  const canvas = document.getElementById("myCanvas")
+  expect(canvas).toMatchSnapshot();
+  expect(message).toBe("YOU WIN, CONGRATULATIONS!")
 });

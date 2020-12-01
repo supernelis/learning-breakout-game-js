@@ -32,47 +32,12 @@ var lives = 3;
 
 var show = alert;
 
-function reset(_show){
-    show = _show;
+var bricks = [];
 
-    canvas = document.getElementById("myCanvas");
-    ctx = canvas.getContext("2d");
-
-    score = 0;
-
-    ballRadius = 10;
-
-    paddleHeight = 10;
-    paddleWidth = 75;
-    paddleX = (canvas.width - paddleWidth) / 2;
-
-    x = canvas.width / 2;
-    y = canvas.height - 30;
-    dx = 2;
-    dy = -2;
-
-    rightPressed = false;
-    leftPressed = false;
-
-    /** brick wall **/
-
-    brickRowCount = 3;
-    brickColumnCount = 5;
-    brickWidth = 75;
-    brickHeight = 20;
-    brickPadding = 10;
-    brickOffsetTop = 30;
-    brickOffsetLeft = 30;
-
-    // lives
-    lives = 3;
-
-    bricks = [];
-    for (var c = 0; c < brickColumnCount; c++) {
-        bricks[c] = [];
-        for (var r = 0; r < brickRowCount; r++) {
-            bricks[c][r] = { x: 0, y: 0, status: 1 };
-        }
+for (var c = 0; c < brickColumnCount; c++) {
+    bricks[c] = [];
+    for (var r = 0; r < brickRowCount; r++) {
+        bricks[c][r] = { x: 0, y: 0, status: 1 };
     }
 }
 
@@ -83,14 +48,6 @@ function drawLives() {
 }
 
 //end lives
-
-var bricks = [];
-for (var c = 0; c < brickColumnCount; c++) {
-    bricks[c] = [];
-    for (var r = 0; r < brickRowCount; r++) {
-        bricks[c][r] = { x: 0, y: 0, status: 1 };
-    }
-}
 
 function drawBricks() {
     for (var c = 0; c < brickColumnCount; c++) {
@@ -235,4 +192,55 @@ function draw() {
 
 var interval = setInterval(draw, 10);
 
-module.exports = {draw, reset};
+
+// Testing functions
+
+function reset(_show){
+    show = _show;
+
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext("2d");
+
+    score = 0;
+
+    ballRadius = 10;
+
+    paddleHeight = 10;
+    paddleWidth = 75;
+    paddleX = (canvas.width - paddleWidth) / 2;
+
+    x = canvas.width / 2;
+    y = canvas.height - 30;
+    dx = 2;
+    dy = -2;
+
+    rightPressed = false;
+    leftPressed = false;
+
+    /** brick wall **/
+
+    brickRowCount = 3;
+    brickColumnCount = 5;
+    brickWidth = 75;
+    brickHeight = 20;
+    brickPadding = 10;
+    brickOffsetTop = 30;
+    brickOffsetLeft = 30;
+
+    // lives
+    lives = 3;
+
+    bricks = [];
+    for (var c = 0; c < brickColumnCount; c++) {
+        bricks[c] = [];
+        for (var r = 0; r < brickRowCount; r++) {
+            bricks[c][r] = { x: 0, y: 0, status: 1 };
+        }
+    }
+}
+
+function overrideLives(_lives) {
+    lives = _lives;
+}
+
+module.exports = {draw, reset, overrideLives};
